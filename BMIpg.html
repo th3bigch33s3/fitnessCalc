@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--in the stylesheet make id's for mobile a -->
+<link rel="stylesheet" type="text/css" href="mobileStyle.css">
+	<title>BMI Calculator</title>
+<style type="text/css">
+	body{background-color: #0f1626;}
+/* FOR HEADER AND NAV */
+
+
+/* THE MAIN ISSUE IS THAT I CANT CENTER THER A TAGS AND CANT GLUE THEM TOGETHER*/
+
+
+
+
+
+h1{color: #ab987a;}
+	
+
+
+.div1 {
+  border-radius: 5px;
+  background-color: #ff533d;
+  padding: 20px;
+  text-align: center;
+  width: 40vh;
+  height: 15vh;
+  margin:auto;
+  margin-top: 50vh;
+  top: -15vh;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+
+}
+
+div-cal{
+	 border-radius: 5px;
+  background-color: #ab987a;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  height: 50px;
+  margin:auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.dropbtn {
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: unset;
+}
+
+
+
+
+label{ font-family: unset; }
+
+#spectrum-background {
+        background-color: #0f1626;
+   
+    
+}
+
+
+.subres{
+	padding:5px; background-color: white; border-radius: 3px; border-style: none; width: 100px; margin-top: 20px;
+}
+.subres2{
+	padding:5px; background-color: #0f1626; border-radius: 3px; border-style: none; width: 100px; margin-top: 20px; color: #f5f5f5;
+}
+</style>
+
+
+</head>
+<body>
+	<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn" style="font-size: 3em;"> Calculators
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    <a class="nav1" class="dropbtn" href="file:///Users/brendenbissessar/Desktop/homepg.html" style="color: white;" ><strong style="text-align: left;">Home Page</strong></a>
+		<a  class="nav2" class href="file:///Users/brendenbissessar/Desktop/bmrpg.html" style="color: white;">BMR Calculator</a>
+		<a class="nav3" href="file:///Users/brendenbissessar/Desktop/BMIpg.html" style="color: white;" >BMI</a>
+    </div>
+  </div> 
+</div>
+
+
+	<h1 style="font-size: 3em; text-align: center; margin-top: 0; margin-bottom: 3vh;">Calculate Your BMI</h1>
+	<div class="div1">
+		<label >Height
+
+			<p style="display: inline;"> 
+
+			<select name="Feet" class="dropbtn" id="feet">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+			</select>
+			Feet
+		</p>
+
+		<p style="display: inline;">
+			<select name="Inch" class="dropbtn" id="inch">
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+			</select>
+			Inches
+		</p>
+		</label>
+<!-- End of Height-->
+
+	<br>
+
+	<label>Weight 
+		<input type="text" name="weight" id="weight" style="width: 50px; margin-top: 10px; ">
+	(Pounds)</label>
+
+	<br>
+	<input type="submit" name="submit" value="Calculate!" class="subres" onclick="myfunction()">
+	<input type="reset" name="reset" value="Reset" class="subres2">
+
+	</div>
+
+
+		<p id="demo" style="color: #ab987a;  margin-top: 50vh; text-align: center; font-size: 3em;">Your BMI</p>
+
+		<p style="color: #ab987a; text-align: center;">BMI also known as body mass index, is an indicator of ones body fat levels</p>
+
+		<p style="color: #ab987a; text-align: center;">A healthy BMI score is between 20-25</p>
+
+<script type="text/javascript">
+	
+	function myfunction(){
+		var f = parseInt(document.getElementById("feet").value)*12;
+		var i = parseInt(document.getElementById("inch").value);
+		var w = parseInt(document.getElementById("weight").value);
+		var height = f+i;
+		var BMI = (703*(w/(height*height))).toFixed(2);
+
+		if(BMI <15){
+		var response = "You have a BMI of "+ BMI+ " You are considered severely underweight!"
+		document.getElementById("demo").innerHTML = response;
+		}
+
+		else if(BMI>= 15 && BMI <20){
+		var response = "You have a BMI of "+ BMI+ " You are considered underweight!"
+		document.getElementById("demo").innerHTML = response;
+
+		}
+
+
+		else if( BMI >= 20 && BMI <=25 ){
+		var response = "You have a BMI of "+ BMI+ " You are considered healthy!"
+		document.getElementById("demo").innerHTML = response;
+		
+		}
+
+		else if( BMI >25 && BMI <=30){
+		var response = "You have a BMI of "+ BMI+ " You are considered overweight!"
+		document.getElementById("demo").innerHTML = response;
+		}
+
+		else if( BMI >30 && BMI <=35){
+		var response = "You have a BMI of "+ BMI+ " You are considered moderately obese!"
+		document.getElementById("demo").innerHTML = response;
+		}
+
+		else if(isNaN(BMI)){
+		var response = "You did not type anything in!"
+		document.getElementById("demo").innerHTML = response;
+		}
+
+		else{
+		var response = "You have a BMI of "+ BMI+ " You are considered severely obese!"
+		document.getElementById("demo").innerHTML = response;
+		}
+
+
+
+		}
+
+	
+	
+
+
+</script>
+
+
+
+</body>
+</html>

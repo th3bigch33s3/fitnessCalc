@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--in the stylesheet make id's for mobile a -->
+	<title>Your BMR</title>
+	<link rel="stylesheet" type="text/css" href="mobileStyle.css">
+<style type="text/css">
+
+
+
+
+/* FOR HEADER AND NAV */
+
+
+/* THE MAIN ISSUE IS THAT I CANT CENTER THER A TAGS AND CANT GLUE THEM TOGETHER*/
+
+/* END OF FOR THE HEADER AND NAV */
+h1{color: #f5f5f5}
+	
+
+
+.div1 {
+  border-radius: 5px;
+  background-color: #ab987a;
+  padding: 20px;
+  text-align: center;
+  width: 40vh;
+  height: 20vh;
+  margin:auto;
+  top: 15vh;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+
+}
+
+div-cal{
+	 border-radius: 5px;
+  background-color: #ab987a;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  height: 50px;
+  margin:auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.dropbtn {
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: unset;
+}
+
+
+
+label{ font-family: unset; }
+
+#spectrum-background {
+        background-color: #0f1626;
+   
+    
+}
+
+
+.subres{
+	padding: 5px;  background-color: white; border-radius: 3px; border-style: none; width: 100px;
+}
+
+
+</style>
+
+</head>
+<body id="spectrum-background">
+
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn" style="font-size: 3em;"> Calculators
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    <a class="nav1" class="dropbtn" href="file:///Users/brendenbissessar/Desktop/homepg.html" style="color: white;" ><strong style="text-align: left;">Home Page</strong></a>
+		<a  class="nav2" class href="file:///Users/brendenbissessar/Desktop/bmrpg.html" style="color: white;">BMR Calculator</a>
+		<a class="nav3" href="file:///Users/brendenbissessar/Desktop/BMIpg.html" style="color: white;" >BMI</a>
+    </div>
+  </div> 
+</div>
+
+
+		
+<div>
+<h1 style="text-align: center; padding-top: 0px; font-size: 3em;">Calculate Your BMR</h1>
+</div>
+
+	<div class="div1">
+
+<!-- For the Gender-->
+	<label>Gender
+	<select name="gender" class="dropbtn" id="gender">Gender
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+
+	</select>
+</label>
+
+
+
+			
+<!-- END of Gender-->
+			<br>
+
+
+
+<!-- For the Height-->
+		<label style="border-bottom: 1px,solid,#333">Height
+
+			<p style="display: inline;"> 
+
+			<select name="feet" class="dropbtn" id="feet">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+			</select>
+			Feet
+		</p>
+
+		<p style="display: inline;">
+			<select name="inch" class="dropbtn" id="inch">
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+			</select>
+			Inches
+		</p>
+		</label>
+<!-- End of Height-->
+			<br>
+	<!-- For WEight-->
+	<label>Weight
+		<input type="text" name="Weight" class="subres" id="weight"> Pounds
+	</label>
+
+	<!-- END OF WEight-->
+			<br>
+
+			<label> Age
+				<input type="age" name="age" class="subres" id="age"> Years
+				
+			</label>
+
+			<br>
+
+	<!-- SEDENTARY TO ACTIVE QUESTION -->
+			<label>  How many times a week do you exercise?
+			<select name="activity" class="dropbtn" id="activity">
+				<option value="1">Sedentary</option>				
+				<option value="1.375">1-3 times a week</option>
+				<option value="1.55">3-5 times a week</option>
+				<option value="1.725">6-7 times a week</option>
+				<option value="1.9">exercise and have a physicaly demanding job</option>
+			</select>
+			</label>
+
+
+			<br><br>
+
+			<input type="submit" name="submit" value="Calculate!" class="subres" style="background-color: #f5f5f5" onclick="myFunction()">
+			<input type="reset" name="reset" value="Reset" class="subres" style="background-color: coral" >
+	</div>
+
+<!-- test inputs-->
+
+
+	<p id="demo" style="color: white;  margin-top: 50vh; text-align: center; font-size: 3em;">Your BMR</p>
+
+
+	<script type="text/javascript">
+		
+
+function myFunction() {
+	// must convert the value to an int by using parseInt or else you will get NAN
+  
+	var sex = document.getElementById("gender").value;
+	var x = parseInt(document.getElementById("feet").value);
+	var y = parseInt(document.getElementById("inch").value);
+	var w = parseInt(document.getElementById("weight").value);
+	var a = parseInt(document.getElementById("age").value);
+	
+
+if(sex =="male"){
+	var x = x*12; // conversion of feet to inches as the calculation is in inhes
+	var bmr = 66 + (6.2*w) + (12.7* (x+y)) - ( 6.76*a);
+	var active = document.getElementById("activity").value;
+	var bmr = (bmr*active).toFixed(2);
+
+// cant get the isNAn to work in the if statements. for some reason the whole code stops working 
+
+
+	if(active==1)
+	var cal = "Your BMR is: " + bmr + " Calories";
+	else
+	var cal = "You burn about: " + bmr + " Calories in a day!";
+
+	document.getElementById("demo").innerHTML = cal;
+
+
+	
+
+}
+
+
+		
+
+
+else{
+	var x = x*12; // conversion of feet to inches as the calculation is in inhes
+	var bmr = 665.1 + (4.35*w) + (4.7* (x+y)) -( 4.7*a);
+	 var active = document.getElementById("activity").value;
+	var bmr = (bmr*active).toFixed(2);	
+	
+	if(active==1)
+	var cal = "Your BMR is: " + bmr + " Calories";
+	else
+	var cal = "You burn about: " + bmr + " Calories in a day!";
+
+	document.getElementById("demo").innerHTML = cal;
+
+}
+
+}
+	</script>
+
+
+
+
+
+</body>
+</html>
